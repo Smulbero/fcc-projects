@@ -23,6 +23,7 @@ class HashTable:
 
     def lookup(self, key):
         hash_val = self.hash(key)
-        if hash_val in self.collection:            
-            return self.collection[hash_val]
+        if hash_val in self.collection:
+            if key in self.collection[hash_val]:            
+                return self.collection[hash_val][key]
         return None
